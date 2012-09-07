@@ -8,7 +8,7 @@ Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
 {% block title %}{{ parent() }} — {% trans from "rithis_news" %}title{% endtrans %}{% endblock %}
 
 {% block content %}
-    <h2>{% trans from "rithis_news" %}news.all.header{% endtrans %}</h2>
+    <h2>{% trans from "rithis_news" %}title{% endtrans %}</h2>
 
     {% for news in pagination %}
         <h3><a href="{{ path("rithis_news_news_get", {slug: news.slug}) }}">{{ news.title }}</a></h3>
