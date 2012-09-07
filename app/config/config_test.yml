@@ -1,0 +1,11 @@
+# Copyright 2012 Rithis Studio LLC
+# Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+
+web_profiler:
+    toolbar: false

@@ -1,0 +1,47 @@
+{
+    "name": "rithis/continent",
+    "homepage": "https://github.com/rithis/continent",
+    "authors": [
+        {
+            "name": "Vyacheslav Slinko",
+            "email": "vyacheslav.slinko@rithis.com",
+            "role": "Founder"
+        }
+    ],
+    "support": {
+        "email": "support@rithis.com",
+        "issues": "https://github.com/rithis/continent/issues",
+        "wiki": "https://github.com/rithis/continent/wiki",
+        "source": "https://github.com/rithis/continent"
+    },
+    "require": {
+        "symfony/symfony": "2.1.*@stable",
+        "symfony/monolog-bundle": "2.1.*@stable",
+        "doctrine/doctrine-bundle": "1.0.*@RC",
+        "doctrine/doctrine-fixtures-bundle": "2.1.*@alpha",
+        "doctrine/doctrine-migrations-bundle": "@dev",
+        "sonata-project/doctrine-orm-admin-bundle": "@dev",
+        "rithis/composer-handler": "2.1.*@stable"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rithis": "src"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Rithis\\Composer\\ScriptHandler::touchParameters",
+            "Rithis\\Composer\\ScriptHandler::clearCache",
+            "Rithis\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Rithis\\Composer\\ScriptHandler::clearCache",
+            "Rithis\\Composer\\ScriptHandler::installAssets"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    }
+}

@@ -1,0 +1,14 @@
+# Copyright 2012 Rithis Studio LLC
+# Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+
+security:
+    providers:
+        in_memory:
+            memory:
+                users:
+                    admin: { password: admin }
+
+    firewalls:
+        secured_area:
+            pattern: ^
+            anonymous: ~

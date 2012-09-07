@@ -1,0 +1,13 @@
+# Copyright 2012 Rithis Studio LLC
+# Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+
+parameters:
+    secret: ThisTokenIsNotSoSecretChangeIt
+
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: ~
+    database_name: continent
+    database_user: root
+    database_password: root
+    database_path: ~
