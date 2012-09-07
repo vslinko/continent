@@ -3,7 +3,7 @@ Copyright 2012 Rithis Studio LLC
 Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
 #}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ app.request.locale }}">
 <head>
     <title>{% block title %}{% trans from "rithis_bootstrap" %}title{% endtrans %}{% endblock %}</title>
     <link rel="stylesheet" href="/bundles/rithisbootstrap/css/bootstrap.min.css">
