@@ -1,5 +1,5 @@
 {
-    "hash": "cf8e08619c340f893e14620ddb4ed66e",
+    "hash": "07dba2682de35a90739f7e09fef5fc0e",
     "packages": [
         {
             "package": "doctrine/common",
@@ -32,6 +32,12 @@
             "version": "2.3.x-dev",
             "source-reference": "4d9f24b2eef3af3a3e76c773994c19bbb0706f88",
             "commit-date": "1346869007"
+        },
+        {
+            "package": "exercise/elastica-bundle",
+            "version": "dev-master",
+            "source-reference": "5d1f4f2d68bfab8eda9484a199e2c4b85c0efcd4",
+            "commit-date": "1345226184"
         },
         {
             "package": "gedmo/doctrine-extensions",
@@ -74,6 +80,10 @@
         {
             "package": "rithis/composer-handler",
             "version": "v2.1.0"
+        },
+        {
+            "package": "ruflin/Elastica",
+            "version": "v0.19.3.0"
         },
         {
             "package": "sensio/distribution-bundle",
@@ -175,6 +185,7 @@
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "rithis/composer-handler": 0,
         "stof/doctrine-extensions-bundle": 20,
-        "knplabs/knp-paginator-bundle": 0
+        "knplabs/knp-paginator-bundle": 0,
+        "exercise/elastica-bundle": 20
     }
 }

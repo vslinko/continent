@@ -52,3 +52,21 @@ stof_doctrine_extensions:
 knp_paginator:
     template:
         pagination: RithisBootstrapBundle::pagination.html.twig
+
+foq_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        rithis:
+            types:
+                news:
+                    mappings:
+                        title:
+                        description:
+                        text:
+                    persistence:
+                        driver: orm
+                        model: Rithis\NewsBundle\Entity\News
+                        identifier: slug
+                        provider:
+                        listener:

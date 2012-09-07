@@ -28,9 +28,11 @@ class AppKernel extends Kernel
 
 			new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 			new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+			new FOQ\ElasticaBundle\FOQElasticaBundle(),
 
 			new Rithis\BootstrapBundle\RithisBootstrapBundle(),
 			new Rithis\NewsBundle\RithisNewsBundle(),
+			new Rithis\SearchBundle\RithisSearchBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

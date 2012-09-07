@@ -1,0 +1,14 @@
+# Copyright 2012 Rithis Studio LLC
+# Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+
+rithis_search_requests_new:
+    pattern: /search-requests/new
+    defaults: { _controller: RithisSearchBundle:Requests:new }
+    requirements:
+        _method: GET
+
+rithis_search_requests_post:
+    pattern: /search-requests
+    defaults: { _controller: RithisSearchBundle:Requests:post }
+    requirements:
+        _method: POST

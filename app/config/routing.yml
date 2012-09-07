@@ -12,3 +12,6 @@ _sonata_admin:
 
 _rithis_news:
     resource: "@RithisNewsBundle/Resources/config/routing.yml"
+
+_rithis_search:
+    resource: "@RithisSearchBundle/Resources/config/routing.yml"

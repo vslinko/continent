@@ -1,0 +1,18 @@
+{#
+Copyright 2012 Rithis Studio LLC
+Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+#}
+
+{% extends "RithisBootstrapBundle::base.html.twig" %}
+
+{% block title %}{{ parent() }} — {% trans from "rithis_search" %}title{% endtrans %}{% endblock %}
+
+{% block content %}
+    <h2>{% trans from "rithis_search" %}title{% endtrans %}</h2>
+
+    <form action="{{ path("rithis_search_requests_post") }}" method="post" class="input-append">
+        {{ form_widget(form.query, {attr: {class: 'input-xxlarge'}}) }}
+        {{ form_rest(form) }}
+        <input type="submit" value="{% trans from "rithis_search"%}submit{% endtrans %}" class="btn btn-primary">
+    </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{#
+Copyright 2012 Rithis Studio LLC
+Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+#}
+
+{% extends "RithisSearchBundle:Requests:new.html.twig" %}
+
+{% block title %}{{ parent() }} "{{ query }}"{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <hr>
+    {% for type, results in groups %}
+        <p>{{ type|trans({}, "rithis_search_types") }}</p>
+        {% for result in results %}
+            {% include "RithisSearchBundle::" ~ type ~ "_result.html.twig" %}
+        {% endfor%}
+    {% else %}
+        <p class="alert">{% trans from "rithis_search" %}no_results{% endtrans %}</p>
+    {% endfor %}
+{% endblock %}
