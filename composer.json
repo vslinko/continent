@@ -19,9 +19,10 @@
         "symfony/monolog-bundle": "2.1.*@stable",
         "doctrine/doctrine-bundle": "1.0.*@RC",
         "doctrine/doctrine-fixtures-bundle": "2.1.*@alpha",
-        "doctrine/doctrine-migrations-bundle": "@dev",
         "sonata-project/doctrine-orm-admin-bundle": "@dev",
-        "rithis/composer-handler": "2.1.*@stable"
+        "rithis/composer-handler": "2.1.*@stable",
+        "stof/doctrine-extensions-bundle": "1.1.*@dev",
+        "knplabs/knp-paginator-bundle": "2.2@stable"
     },
     "autoload": {
         "psr-0": {

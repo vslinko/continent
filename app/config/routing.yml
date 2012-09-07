@@ -9,3 +9,6 @@ _sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
+
+_rithis_news:
+    resource: "@RithisNewsBundle/Resources/config/routing.yml"

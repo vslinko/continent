@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
@@ -26,6 +25,12 @@ class AppKernel extends Kernel
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+
+			new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+			new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+
+			new Rithis\BootstrapBundle\RithisBootstrapBundle(),
+			new Rithis\NewsBundle\RithisNewsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

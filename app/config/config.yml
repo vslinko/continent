@@ -9,6 +9,7 @@ imports:
 framework:
     secret: %secret%
     router: { resource: "%kernel.root_dir%/config/routing.yml" }
+    default_locale: ru
     templating: { engines: [twig] }
     form: ~
     csrf_protection: ~
@@ -26,10 +27,28 @@ doctrine:
         path: %database_path%
         charset: UTF8
     orm:
-        auto_mapping: true
+        entity_managers:
+            default:
+                auto_mapping: true
+                filters:
+                    softdeleteable:
+                        class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                        enabled: true
 
 sonata_block:
     default_contexts: [cms]
     blocks:
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+stof_doctrine_extensions:
+    default_locale: ru_RU
+    orm:
+        default:
+            timestampable: true
+            sluggable: true
+            softdeleteable: true
+
+knp_paginator:
+    template:
+        pagination: RithisBootstrapBundle::pagination.html.twig

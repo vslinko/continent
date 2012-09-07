@@ -1,0 +1,14 @@
+{#
+Copyright 2012 Rithis Studio LLC
+Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+#}
+
+{% extends "RithisBootstrapBundle::base.html.twig" %}
+
+{% block title %}{{ parent() }} — {{ news.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ news.title }}</h2>
+
+    <p>{{ news.text|nl2br }}</p>
+{% endblock %}

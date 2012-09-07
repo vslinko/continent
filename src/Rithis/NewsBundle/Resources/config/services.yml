@@ -1,0 +1,11 @@
+parameters:
+    rithis.news.admin.news.class: Rithis\NewsBundle\Admin\NewsAdmin
+
+services:
+    rithis.news.admin.news:
+        class: %rithis.news.admin.news.class%
+        arguments: [null, Rithis\NewsBundle\Entity\News, SonataAdminBundle:CRUD]
+        calls:
+            - [setTranslationDomain, [rithis_news_admin]]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: News, label: News }

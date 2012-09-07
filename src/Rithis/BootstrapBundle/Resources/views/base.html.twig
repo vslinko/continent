@@ -1,0 +1,20 @@
+{#
+Copyright 2012 Rithis Studio LLC
+Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+#}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{% block title %}{% trans from "rithis_bootstrap" %}title{% endtrans %}{% endblock %}</title>
+    <link rel="stylesheet" href="/bundles/rithisbootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>{% trans from "rithis_bootstrap" %}header{% endtrans %}</h1>
+    <hr>
+    {% block content "" %}
+    <hr>
+    <p>&copy; 2012 {% trans from "rithis_bootstrap" %}copyright{% endtrans %}</p>
+</div>
+</body>
+</html>

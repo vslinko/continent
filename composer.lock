@@ -1,5 +1,5 @@
 {
-    "hash": "8ad5b2719328d2d3ecec1cb4ba3fb0a5",
+    "hash": "cf8e08619c340f893e14620ddb4ed66e",
     "packages": [
         {
             "package": "doctrine/common",
@@ -28,22 +28,22 @@
             "version": "v2.1.0-ALPHA"
         },
         {
-            "package": "doctrine/doctrine-migrations-bundle",
-            "version": "dev-master",
-            "source-reference": "3792aa78445773387754c6853bbd7f4dcb31f486",
-            "commit-date": "1341472972"
-        },
-        {
-            "package": "doctrine/migrations",
-            "version": "dev-master",
-            "source-reference": "b86b4cc0a39714f0aa53b908d495beacfa0e4011",
-            "commit-date": "1343202693"
-        },
-        {
             "package": "doctrine/orm",
             "version": "2.3.x-dev",
             "source-reference": "4d9f24b2eef3af3a3e76c773994c19bbb0706f88",
             "commit-date": "1346869007"
+        },
+        {
+            "package": "gedmo/doctrine-extensions",
+            "version": "dev-master",
+            "source-reference": "4e8a3a920eedaba4e76c26a92347e9b47bb7ffdf",
+            "commit-date": "1346486653"
+        },
+        {
+            "package": "knplabs/knp-components",
+            "version": "dev-master",
+            "source-reference": "99ea408dc2a7c3616e688ffe67e3248ece69ff0e",
+            "commit-date": "1339767068"
         },
         {
             "package": "knplabs/knp-menu",
@@ -54,6 +54,10 @@
         {
             "package": "knplabs/knp-menu-bundle",
             "version": "v1.1.0"
+        },
+        {
+            "package": "knplabs/knp-paginator-bundle",
+            "version": "v2.2"
         },
         {
             "package": "monolog/monolog",
@@ -104,8 +108,8 @@
         {
             "package": "sonata-project/cache-bundle",
             "version": "dev-master",
-            "source-reference": "082efe51dfba60f30905472b642807db40437893",
-            "commit-date": "1346370131"
+            "source-reference": "0f339c37e19d8cce728e74ee9da34a9e51d54a11",
+            "commit-date": "1346968445"
         },
         {
             "package": "sonata-project/doctrine-orm-admin-bundle",
@@ -116,14 +120,26 @@
         {
             "package": "sonata-project/exporter",
             "version": "dev-master",
-            "source-reference": "bcdfd50bc3118173d914e790921701ab26fb6b14",
-            "commit-date": "1338844924"
+            "source-reference": "75174b5a41f1014ecb4b4810a518f036b830d862",
+            "commit-date": "1346967589"
         },
         {
             "package": "sonata-project/jquery-bundle",
             "version": "dev-master",
             "source-reference": "5f87a761302e6c78304e071416f75d41eb1fb3c2",
             "commit-date": "1346283282"
+        },
+        {
+            "package": "stof/doctrine-extensions-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
+        },
+        {
+            "package": "stof/doctrine-extensions-bundle",
+            "version": "dev-master",
+            "source-reference": "0247e6f1658d76292c8ffe2c5106090bd36bd799",
+            "commit-date": "1346283670"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -156,8 +172,9 @@
         "symfony/monolog-bundle": 0,
         "doctrine/doctrine-bundle": 5,
         "doctrine/doctrine-fixtures-bundle": 15,
-        "doctrine/doctrine-migrations-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
-        "rithis/composer-handler": 0
+        "rithis/composer-handler": 0,
+        "stof/doctrine-extensions-bundle": 20,
+        "knplabs/knp-paginator-bundle": 0
     }
 }

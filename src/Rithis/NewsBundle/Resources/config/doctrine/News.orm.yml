@@ -1,0 +1,35 @@
+Rithis\NewsBundle\Entity\News:
+    type: entity
+    table: news
+    gedmo:
+        soft_deleteable: { field_name: deletedAt }
+    fields:
+        id:
+            type: integer
+            id: true
+            generator: { strategy: IDENTITY }
+        slug:
+            length: 140
+            unique: true
+            gedmo:
+                slug: { fields: [title] }
+        title:
+            length: 140
+        description:
+            type: text
+        text:
+            type: text
+        createdAt:
+            type: datetime
+            column: created_at
+            gedmo:
+                timestampable: { on: create }
+        updatedAt:
+            type: datetime
+            column: updated_at
+            gedmo:
+                timestampable: { on: update }
+        deletedAt:
+            type: datetime
+            column: deleted_at
+            nullable: true

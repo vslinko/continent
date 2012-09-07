@@ -1,0 +1,19 @@
+{#
+Copyright 2012 Rithis Studio LLC
+Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+#}
+
+{% extends "RithisBootstrapBundle::base.html.twig" %}
+
+{% block title %}{{ parent() }} — {% trans from "rithis_news" %}title{% endtrans %}{% endblock %}
+
+{% block content %}
+    <h2>{% trans from "rithis_news" %}news.all.header{% endtrans %}</h2>
+
+    {% for news in pagination %}
+        <h3><a href="{{ path("rithis_news_news_get", {slug: news.slug}) }}">{{ news.title }}</a></h3>
+        <p>{{ news.description }}</p>
+    {% endfor %}
+
+    {{ pagination.render()|raw }}
+{% endblock %}

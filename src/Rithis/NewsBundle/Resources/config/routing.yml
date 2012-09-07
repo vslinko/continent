@@ -1,0 +1,14 @@
+# Copyright 2012 Rithis Studio LLC
+# Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+
+rithis_news_news_all:
+    pattern: /news
+    defaults: { _controller: RithisNewsBundle:News:all }
+    requirements:
+        _method: GET
+
+rithis_news_news_get:
+    pattern: /news/{slug}
+    defaults: { _controller: RithisNewsBundle:News:get }
+    requirements:
+        _method: GET

@@ -1,0 +1,14 @@
+# Copyright 2012 Rithis Studio LLC
+# Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+
+News: Новости
+
+News List: Список новостей
+News Edit: Редактирование новости
+News Delete: Удаление новости
+
+Title: Заголовок
+Description: Краткое описание
+Text: Текст
+Created At: Время создания
+Updated At: Время последнего обновления
