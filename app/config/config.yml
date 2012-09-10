@@ -70,6 +70,3 @@ foq_elastica:
                         identifier: slug
                         provider:
                         listener:
-
-rithis_website_index:
-    rithis_news_news_get: RithisNewsBundle:News

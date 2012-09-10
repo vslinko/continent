@@ -20,3 +20,6 @@ monolog:
         firephp:
             type:  firephp
             level: info
+
+rithis_website_index:
+    rithis_news_news_get: RithisNewsBundle:News
