@@ -9,5 +9,12 @@ _profiler:
     resource: "@WebProfilerBundle/Resources/config/routing/profiler.xml"
     prefix: /_profiler
 
+_index:
+    pattern: /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: rithis_website_index_website_index_get }
+
+_rithis_website_index:
+    resource: "@RithisWebsiteIndexBundle/Resources/config/routing.yml"
+
 _main:
     resource: routing.yml
