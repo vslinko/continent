@@ -7,14 +7,17 @@ Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
 <head>
     <title>{% block title %}{% trans from "rithis_bootstrap" %}title{% endtrans %}{% endblock %}</title>
     <link rel="stylesheet" href="/bundles/rithisbootstrap/css/bootstrap.min.css">
+    {% block head %}{% endblock %}
 </head>
 <body>
 <div class="container">
-    <h1>{% trans from "rithis_bootstrap" %}header{% endtrans %}</h1>
-    <hr>
-    {% block content "" %}
-    <hr>
-    <p>&copy; 2012 {% trans from "rithis_bootstrap" %}copyright{% endtrans %}</p>
+    {% block body %}
+        <h1>{% block header %}{% trans from "rithis_bootstrap" %}header{% endtrans %}{% endblock %}</h1>
+        <hr>
+        {% block content "" %}
+        <hr>
+        <p>{% block footer %}&copy; 2012 {% trans from "rithis_bootstrap" %}copyright{% endtrans %}{% endblock %}</p>
+    {% endblock %}
 </div>
 </body>
 </html>
