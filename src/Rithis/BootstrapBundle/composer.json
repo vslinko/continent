@@ -1,0 +1,28 @@
+{
+    "name": "rithis/bootstrap-bundle",
+    "type": "symfony-bundle",
+    "homepage": "https://github.com/rithis/BootstrapBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vyacheslav Slinko",
+            "email": "vyacheslav.slinko@rithis.com",
+            "role": "Founder"
+        }
+    ],
+    "support": {
+        "email": "support@rithis.com",
+        "issues": "https://github.com/rithis/BootstrapBundle/issues",
+        "wiki": "https://github.com/rithis/BootstrapBundle/wiki",
+        "source": "https://github.com/rithis/BootstrapBundle"
+    },
+    "require": {
+        "symfony/framework": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rithis\\BootstrapBundle": ""
+        }
+    },
+    "target-dir": "Rithis/BootstrapBundle"
+}
