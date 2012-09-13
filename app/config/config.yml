@@ -70,3 +70,14 @@ foq_elastica:
                         identifier: slug
                         provider:
                         listener:
+
+rithis_publications:
+    news:
+        has_comments: true
+        blocks:
+            title: {type: text, count: 1, title: Title }
+            description: {type: text, count: 1-2, title: Description }
+            image: {type: image, count: 1, title: Main Image }
+            text: {type: text, count: *, title: Main Text }
+            gallery: {type: gallery, count: 0-1, title: Some Images }
+            video: {type: video, count: 0-1, title: Some Video }

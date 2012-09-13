@@ -1,0 +1,9 @@
+Rithis\PublicationsBundle\Entity\Publication:
+    type: entity
+    table: publications
+    fields:
+        id:
+            id: true
+        resource:
+            id: true
+        title: ~

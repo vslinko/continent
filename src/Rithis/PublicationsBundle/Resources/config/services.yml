@@ -1,0 +1,8 @@
+# Copyright 2012 Rithis Studio LLC
+# Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+
+services:
+    rithis.publications.routing.publications:
+        class: Rithis\PublicationsBundle\Routing\PublicationsLoader
+        tags:
+            - {name: routing.loader}

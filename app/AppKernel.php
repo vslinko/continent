@@ -31,7 +31,7 @@ class AppKernel extends Kernel
 			new FOQ\ElasticaBundle\FOQElasticaBundle(),
 
 			new Rithis\BootstrapBundle\RithisBootstrapBundle(),
-			new Rithis\NewsBundle\RithisNewsBundle(),
+            new Rithis\PublicationsBundle\RithisPublicationsBundle(),
 			new Rithis\SearchBundle\RithisSearchBundle(),
         );
 

@@ -1,0 +1,18 @@
+{#
+Copyright 2012 Rithis Studio LLC
+Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+#}
+
+{% extends "RithisBootstrapBundle::base.html.twig" %}
+
+{% block title %}{{ parent() }} — {{ title|trans({}, 'rithis_publications') }}{% endblock %}
+
+{% block content %}
+    <h2>{{ title|trans({}, 'rithis_publications') }}</h2>
+
+    {% for publication in pagination %}
+        <h3>{{ publication.title }}</h3>
+    {% endfor %}
+
+    {{ pagination.render()|raw }}
+{% endblock %}
