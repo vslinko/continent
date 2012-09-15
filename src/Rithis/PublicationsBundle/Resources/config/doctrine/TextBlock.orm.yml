@@ -1,0 +1,5 @@
+Rithis\PublicationsBundle\Entity\TextBlock:
+    type: entity
+    fields:
+        text:
+            type: text

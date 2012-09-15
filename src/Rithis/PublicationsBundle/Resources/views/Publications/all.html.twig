@@ -11,7 +11,11 @@ Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
     <h2>{{ title|trans({}, 'rithis_publications') }}</h2>
 
     {% for publication in pagination %}
-        <h3>{{ publication.title }}</h3>
+        <h3><a href="{{ path(publications_get, {id: publication.id}) }}">{{ publication.title }}</a></h3>
+
+        {% for block in publication.blocksBeforeEmpty %}
+            {{ block|raw }}
+        {% endfor %}
     {% endfor %}
 
     {{ pagination.render()|raw }}

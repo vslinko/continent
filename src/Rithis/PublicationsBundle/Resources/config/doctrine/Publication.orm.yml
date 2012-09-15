@@ -7,3 +7,9 @@ Rithis\PublicationsBundle\Entity\Publication:
         resource:
             id: true
         title: ~
+    oneToMany:
+        blocks:
+            targetEntity: EmptyBlock
+            mappedBy: publication
+            orderBy:
+                position: ASC

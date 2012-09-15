@@ -19,6 +19,7 @@ class PublicationsLoader implements LoaderInterface
 
         $actions = array(
             'all' => '/%s',
+            'get' => '/%s/{id}',
         );
 
         foreach ($actions as $action => $route) {

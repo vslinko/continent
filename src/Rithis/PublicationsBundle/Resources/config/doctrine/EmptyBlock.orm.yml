@@ -1,0 +1,30 @@
+Rithis\PublicationsBundle\Entity\EmptyBlock:
+    type: entity
+    table: publication_blocks
+    repositoryClass: Gedmo\Sortable\Entity\Repository\SortableRepository
+    inheritanceType: SINGLE_TABLE
+    discriminatorColumn:
+        name: block_type
+        type: string
+    discriminatorMap:
+        empty: EmptyBlock
+        text: TextBlock
+    fields:
+        id:
+            type: integer
+            id: true
+            generator: { strategy: IDENTITY }
+        position:
+            type: integer
+            length: 2
+            gedmo:
+                - sortablePosition
+    manyToOne:
+        publication:
+            targetEntity: Publication
+            inversedBy: blocks
+            gedmo:
+                - sortableGroup
+            joinColumn:
+                name: publication_id
+                referencedColumnName: id

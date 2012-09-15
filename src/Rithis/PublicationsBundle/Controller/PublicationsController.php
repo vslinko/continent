@@ -7,6 +7,7 @@
 namespace Rithis\PublicationsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class PublicationsController extends Controller
 {
@@ -34,8 +35,38 @@ class PublicationsController extends Controller
         );
 
         return $this->render($template, array(
-            'title' => ucfirst($resource),
+            'resource' => $resource,
             'pagination' => $pagination,
         ));
+    }
+
+    public function getAction($resource, $id, $template = 'RithisPublicationsBundle:Publications:get.html.twig')
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $publication = $em->getRepository('RithisPublicationsBundle:Publication')->find(array(
+            'id' => $id,
+            'resource' => $resource,
+        ));
+
+        if (!$publication) {
+            $this->createNotFoundException();
+        }
+
+        return $this->render($template, array(
+            'resource' => $resource,
+            'publication' => $publication,
+        ));
+    }
+
+    public function render($view, array $parameters = array(), Response $response = null)
+    {
+        if (isset($parameters['resource'])) {
+            $parameters['title'] = ucfirst($parameters['resource']);
+            $parameters['publications_all'] = sprintf('publications_%s_all', $parameters['resource']);
+            $parameters['publications_get'] = sprintf('publications_%s_get', $parameters['resource']);
+        }
+
+        return parent::render($view, $parameters, $response);
     }
 }
