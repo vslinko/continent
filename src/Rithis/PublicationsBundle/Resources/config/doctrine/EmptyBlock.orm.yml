@@ -9,13 +9,13 @@ Rithis\PublicationsBundle\Entity\EmptyBlock:
     discriminatorMap:
         empty: EmptyBlock
         text: TextBlock
+    id:
+        publication:
+            associationKey: true
     fields:
-        id:
-            type: integer
-            id: true
-            generator: { strategy: IDENTITY }
         position:
             type: integer
+            id: true
             length: 2
             gedmo:
                 - sortablePosition

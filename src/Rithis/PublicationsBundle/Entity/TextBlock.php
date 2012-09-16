@@ -20,6 +20,11 @@ class TextBlock extends EmptyBlock
         return $this->text;
     }
 
+    public function getType()
+    {
+        return 'text';
+    }
+
     public function __toString()
     {
         return sprintf('<p>%s</p>', str_replace("\n\n", '</p><p>', $this->text));

@@ -1,0 +1,14 @@
+{#
+Copyright 2012 Rithis Studio LLC
+Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+#}
+
+<div class="publication-trash well well-large" data-publication-trash>
+    <div><span class="default">{% trans from "rithis_publications" %}move_to_trash{% endtrans %}</span><span class="hover">{% trans from "rithis_publications" %}drop_block{% endtrans %}</span></div>
+</div>
+<div class="publication-admin well">
+    <button class="btn" data-publication-add="text"><i class="icon-align-left"></i><br>{% trans from "rithis_publications" %}add_text_block{% endtrans %}</button>
+    <button class="btn" data-publication-add="empty"><i class="icon-cut"></i><br>{% trans from "rithis_publications" %}add_cut_block{% endtrans %}</button>
+</div>
+<link rel="stylesheet" href="/bundles/rithispublications/css/admin.css">
+<script type="text/javascript" src="/bundles/rithispublications/js/admin.js"></script>

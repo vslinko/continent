@@ -8,9 +8,74 @@ namespace Rithis\PublicationsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Rithis\PublicationsBundle\Entity\EmptyBlock;
+use Rithis\PublicationsBundle\Entity\TextBlock;
 
 class PublicationsController extends Controller
 {
+    public function editAction($resource, $id, $template = 'RithisPublicationsBundle:Publications:edit.html.twig')
+    {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            //throw $this->createNotFoundException();
+        }
+
+        $publication = $this->getPublication($id, $resource);
+
+        return $this->render($template, array(
+            'resource' => $resource,
+            'publication' => $publication,
+        ));
+    }
+
+    public function putAction($resource, $id)
+    {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            //throw $this->createNotFoundException();
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        foreach ($em->getEventManager()->getListeners() as $event => $listeners) {
+            foreach ($listeners as $listener) {
+                if ($listener instanceof \Gedmo\Sortable\SortableListener) {
+                    $em->getEventManager()->removeEventListener($event, $listener);
+                }
+            }
+        }
+
+        $publication = $this->getPublication($id, $resource);
+
+        foreach ($publication->getBlocks() as $block) {
+            $em->remove($block);
+        }
+
+        $em->flush();
+
+        $publicationContent = json_decode($this->getRequest()->getContent());
+
+        $publication->setTitle($publicationContent->title);
+
+        foreach ($publicationContent->blocks as $i => $blockContent) {
+            switch ($blockContent->type) {
+                case 'empty':
+                    $block = new EmptyBlock();
+                    $block->setPosition($i);
+                    $publication->addBlock($block);
+                    break;
+                case 'text':
+                    $block = new TextBlock();
+                    $block->setText($blockContent->content);
+                    $block->setPosition($i);
+                    $publication->addBlock($block);
+                    break;
+            }
+        }
+
+        $em->flush();
+
+        return new Response(json_encode(array('status' => 'ok')));
+    }
+
     public function allAction($resource, $template = 'RithisPublicationsBundle:Publications:all.html.twig', $limit = 10)
     {
         $em = $this->getDoctrine()->getManager();
@@ -42,16 +107,7 @@ class PublicationsController extends Controller
 
     public function getAction($resource, $id, $template = 'RithisPublicationsBundle:Publications:get.html.twig')
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $publication = $em->getRepository('RithisPublicationsBundle:Publication')->find(array(
-            'id' => $id,
-            'resource' => $resource,
-        ));
-
-        if (!$publication) {
-            $this->createNotFoundException();
-        }
+        $publication = $this->getPublication($id, $resource);
 
         return $this->render($template, array(
             'resource' => $resource,
@@ -65,8 +121,25 @@ class PublicationsController extends Controller
             $parameters['title'] = ucfirst($parameters['resource']);
             $parameters['publications_all'] = sprintf('publications_%s_all', $parameters['resource']);
             $parameters['publications_get'] = sprintf('publications_%s_get', $parameters['resource']);
+            $parameters['publications_put'] = sprintf('publications_%s_put', $parameters['resource']);
         }
 
         return parent::render($view, $parameters, $response);
+    }
+
+    public function getPublication($id, $resource)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $publication = $em->getRepository('RithisPublicationsBundle:Publication')->find(array(
+            'id' => $id,
+            'resource' => $resource,
+        ));
+
+        if (!$publication) {
+            $this->createNotFoundException();
+        }
+
+        return $publication;
     }
 }

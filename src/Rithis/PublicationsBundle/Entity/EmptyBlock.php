@@ -10,7 +10,7 @@ class EmptyBlock
 {
     protected $id;
     protected $publication;
-    protected $position;
+    protected $position = 0;
 
     public function setId($id)
     {
@@ -40,6 +40,11 @@ class EmptyBlock
     public function getPosition()
     {
         return $this->position;
+    }
+
+    public function getType()
+    {
+        return 'empty';
     }
 
     public function __toString()

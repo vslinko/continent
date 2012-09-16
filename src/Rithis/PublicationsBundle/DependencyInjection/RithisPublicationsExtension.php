@@ -19,26 +19,11 @@ class RithisPublicationsExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        foreach ($config as $name => $value) {
+            $container->setParameter(sprintf('rithis.publications.types.%s', $name), $value);
+        }
+
 		$loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 		$loader->load('services.yml');
-
-        foreach ($config as $resource => $resourceConfig) {
-            $definition = new Definition('Rithis\\PublicationsBundle\\Admin\\PublicationAdmin', array(
-                null,
-                'Rithis\\PublicationsBundle\\Entity\\Publication',
-                'SonataAdminBundle:CRUD'
-            ));
-
-            $definition->addMethodCall('setResource', array($resource));
-            $definition->addMethodCall('setTranslationDomain', array('rithis_publications'));
-
-            $definition->addTag('sonata.admin', array(
-                'manager_type' => 'orm',
-                'group' => 'Publications',
-                'label' => ucfirst($resource)
-            ));
-
-            $container->setDefinition(sprintf('rithis.publications.admin.%s', $resource), $definition);
-        }
 	}
 }

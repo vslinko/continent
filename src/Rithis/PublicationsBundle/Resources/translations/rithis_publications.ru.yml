@@ -1,2 +1,7 @@
-Id: Идентификатор
-Title: Заголовок
+# Copyright 2012 Rithis Studio LLC
+# Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+
+move_to_trash: Перетащите блок сюда для удаления
+drop_block: Отпустите для удаления
+add_text_block: Текст
+add_cut_block: Разрыв

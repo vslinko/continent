@@ -4,12 +4,12 @@ Rithis\PublicationsBundle\Entity\Publication:
     fields:
         id:
             id: true
-        resource:
-            id: true
+        resource: ~
         title: ~
     oneToMany:
         blocks:
             targetEntity: EmptyBlock
             mappedBy: publication
+            cascade: [persist]
             orderBy:
                 position: ASC

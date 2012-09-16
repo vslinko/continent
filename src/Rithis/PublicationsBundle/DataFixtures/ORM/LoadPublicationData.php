@@ -16,25 +16,25 @@ class LoadPublicationData implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $helloWorld = new TextBlock();
-        $helloWorld->setText('Hello World!');
-        $manager->persist($helloWorld);
-
-        $empty = new EmptyBlock();
-        $manager->persist($empty);
-
-        $copyrights = new TextBlock();
-        $copyrights->setText('2012 &copy; Rithis Studio LLC');
-        $manager->persist($copyrights);
-
         $publication = new Publication();
         $publication->setId('good-news-everyone');
         $publication->setResource('news');
         $publication->setTitle('GOOD NEWS EVERYONE');
-        $publication->addBlock($helloWorld);
-        $publication->addBlock($empty);
-        $publication->addBlock($copyrights);
         $manager->persist($publication);
+
+        $helloWorld = new TextBlock();
+        $helloWorld->setText('Hello World!');
+        $publication->addBlock($helloWorld);
+        $manager->persist($helloWorld);
+
+        $empty = new EmptyBlock();
+        $publication->addBlock($empty);
+        $manager->persist($empty);
+
+        $copyrights = new TextBlock();
+        $copyrights->setText('2012 &copy; Rithis Studio LLC');
+        $publication->addBlock($copyrights);
+        $manager->persist($copyrights);
 
         $manager->flush();
     }

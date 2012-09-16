@@ -1,0 +1,24 @@
+{#
+Copyright 2012 Rithis Studio LLC
+Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+#}
+
+{% extends "RithisBootstrapBundle::base-js.html.twig" %}
+
+{% block title %}{{ parent() }} — {{ publication.title }}{% endblock %}
+
+{% block content %}
+    <div data-publication>
+        <h2 data-publication-title contenteditable="true">{{ publication.title }}</h2>
+
+        {% for block in publication.blocks %}
+            <div class="publication-block" data-publication-block="{{ block.type }}"{% if false and block.type == 'text' %} contenteditable="true"{% endif %}>
+                {{ block|raw }}
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include "RithisPublicationsBundle::admin.html.twig" %}
+
+    <button class="btn btn-primary" data-publication-button="{{ path(publications_put, {id: publication.id}) }}">Save</button>
+{% endblock %}

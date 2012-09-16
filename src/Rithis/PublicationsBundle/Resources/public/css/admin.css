@@ -1,0 +1,56 @@
+/**
+ * Copyright 2012 Rithis Studio LLC
+ * Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
+ */
+
+*[data-publication-title], *[data-publication-block] {
+    background: #ffffe0;
+    border-radius: 5px;
+    min-height: 20px;
+    margin: 20px 0;
+}
+
+*[data-publication-block=empty] {
+    background: #ffb6c1;
+}
+
+.publication-trash {
+    display: none;
+}
+
+.publication-trash div {
+    border: 5px dotted transparent;
+    padding: 20px;
+    text-align: center;
+    font-size: 200%;
+}
+
+.publication-trash.hover div {
+    border: 5px dotted gray;
+}
+
+.publication-trash span.hover {
+    display: none;
+}
+
+.publication-trash.hover span.default {
+    display: none;
+}
+
+.publication-trash.hover span.hover {
+    display: inline;
+}
+
+.publication-admin {
+    text-align: center;
+}
+
+.publication-admin .btn {
+    width: 100px;
+    height: 100px;
+    margin: 0 30px;
+}
+
+.publication-admin i {
+    font-size: 300%;
+}
