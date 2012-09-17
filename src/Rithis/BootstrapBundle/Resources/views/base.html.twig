@@ -11,14 +11,14 @@ Author Vyacheslav Slinko <vyacheslav.slinko@rithis.com>
     {% block head %}{% endblock %}
 </head>
 <body>
-<div class="container">
-    {% block body %}
+{% block body %}
+    <div class="container">
         <h1>{% block header %}{% trans from "rithis_bootstrap" %}header{% endtrans %}{% endblock %}</h1>
         <hr>
         {% block content "" %}
         <hr>
         <p>{% block footer %}&copy; 2012 {% trans from "rithis_bootstrap" %}copyright{% endtrans %}{% endblock %}</p>
-    {% endblock %}
-</div>
+    </div>
+{% endblock %}
 </body>
 </html>
