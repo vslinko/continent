@@ -15,6 +15,7 @@
         "source": "https://github.com/rithis/continent"
     },
     "require": {
+        "ext-gd": "*",
         "symfony/symfony": "2.1.*@stable",
         "symfony/monolog-bundle": "2.1.*@stable",
         "doctrine/doctrine-bundle": "1.0.*@RC",

@@ -16,5 +16,9 @@ _index:
 _rithis_website_index:
     resource: "@RithisWebsiteIndexBundle/Resources/config/routing.yml"
 
+_rithis_image_placeholder:
+    resource: "@RithisImagePlaceholderBundle/Resources/config/routing.yml"
+    prefix: _placeholder
+
 _main:
     resource: routing.yml
