@@ -33,6 +33,7 @@ class AppKernel extends Kernel
 			new Rithis\BootstrapBundle\RithisBootstrapBundle(),
             new Rithis\PublicationsBundle\RithisPublicationsBundle(),
 			new Rithis\SearchBundle\RithisSearchBundle(),
+            new Rithis\SpriterBundle\RithisSpriterBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
